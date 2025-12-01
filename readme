@@ -1,0 +1,95 @@
+# Blog Full Stack App
+
+Welcome! This is a full-stack blog application where users can register, log in, create rich text posts (with images), edit and version their posts, search  through content, and archive or permanently delete posts. The project is built with a Next.js + Tailwind CSS frontend and an Express + Sequelize + MySQL backend.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/blog-app.git
+cd blog-fullstack-app
+```
+
+### 2. Install Dependencies and Run
+
+**Backend:**
+```bash
+cd server
+npm install
+npm start
+```
+The backend will run on [http://localhost:4000](http://localhost:4000).
+
+**Frontend:**
+```bash
+cd ../client
+npm install
+npm run dev
+```
+The frontend will run on [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 🛠️ API Configuration
+
+- **Backend environment variables:**  
+  - `DB_NAME`, `DB_USER`, `DB_PASS`, `DB_HOST`, `JWT_SECRET`
+- **Frontend environment variable:**  
+  - `NEXT_PUBLIC_API_URL` (default: `http://localhost:4000/api`)
+
+**Key API Endpoints:**
+
+| Method | Endpoint                        | Description                        |
+|--------|---------------------------------|------------------------------------|
+| POST   | /api/auth/signup                | Register a new user                |
+| POST   | /api/auth/login                 | Log in and get a JWT token         |
+| GET    | /api/posts                      | List posts (supports search & pagination) |
+| GET    | /api/posts?archived=true        | List archived (soft-deleted) posts |
+| GET    | /api/posts/:id                  | Get a single post                  |
+| POST   | /api/posts                      | Create a post (auth required)      |
+| PUT    | /api/posts/:id                  | Update a post (auth required)      |
+| PATCH  | /api/posts/:id/archive          | Archive (soft delete) a post       |
+| DELETE | /api/posts/:id                  | Permanently delete a post          |
+| PATCH  | /api/posts/:id/restore          | Restore an archived post           |
+| POST   | /api/posts/upload               | Upload an image (auth required)    |
+| GET    | /api/posts/:id/versions         | Get post version history           |
+
+---
+
+## ✨ Features
+
+- **User authentication** (JWT-based)
+- **Rich text editor** with image upload
+- **Create, read, update, archive, and delete** posts
+- **Version history** for posts
+- **Search**
+- **Soft delete (archive)** and **hard delete**
+- **Responsive UI** with Tailwind CSS
+
+---
+
+## 🧩 Challenges & Solutions
+
+**1. React-Quill and React 19:**  
+React-Quill doesn’t support React 19, so we used React 18 for the client. 
+
+**2. Soft Delete vs Hard Delete:**  
+needed both archive (soft delete) and permanent delete. The backend now supports both, and the UI gives users both options.
+
+
+## frontend env:
+
+NEXT_PUBLIC_API_URL=http://localhost:4000/api
+NEXT_PUBLIC_BACKEND_URL=http://localhost:4000
+
+## backend env
+
+PORT=4000
+DB_NAME=blog-app
+DB_USER=root
+DB_PASS=""
+DB_HOST=localhost
+JWT_SECRET=dkjhuh54it4nfn778&whfef7r74erhjefnjefiuhr3fiefefnje
