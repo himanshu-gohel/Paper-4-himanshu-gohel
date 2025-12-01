@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import api from '../../utils/api';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import Link  from 'next/link';
 
 const schema = yup.object().shape({
   name: yup.string().min(3).max(30).required('Name is required'),
@@ -57,6 +58,11 @@ export default function Signup() {
         <button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           {isSubmitting ? 'Signing up...' : 'Sign Up'}
         </button>
+         <div className="mt-4 text-center">
+          <Link href="/auth/login" className="text-blue-600 hover:underline">
+            Already registered?
+          </Link>
+        </div>
       </form>
     </div>
   );

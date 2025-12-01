@@ -9,7 +9,7 @@ Welcome! This is a full-stack blog application where users can register, log in,
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/blog-app.git
+git clone https://github.com/yourusername/Paper-4-himanshu-gohel/.git
 cd blog-fullstack-app
 ```
 
