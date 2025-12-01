@@ -9,8 +9,8 @@ Welcome! This is a full-stack blog application where users can register, log in,
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Paper-4-himanshu-gohel/.git
-cd blog-fullstack-app
+https://github.com/himanshu-gohel/Paper-4-himanshu-gohel.git
+cd Paper-4-himanshu-gohel
 ```
 
 ### 2. Install Dependencies and Run
