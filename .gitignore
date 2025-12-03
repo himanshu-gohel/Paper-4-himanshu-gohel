@@ -6,6 +6,3 @@ server/node_modules
 client/.next
 server/uploads
 
-# Environment files
-client/.env
-server/.env
